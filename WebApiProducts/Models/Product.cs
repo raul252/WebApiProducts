@@ -9,19 +9,21 @@ namespace WebApiProducts.Models
         
         public int Id { get; set; }
 
-        [Required]
-        [StringLength(maximumLength: 50)]
+        [Required(ErrorMessage = "El campo {0} es requerido")]
+        [StringLength(maximumLength: 50, ErrorMessage = "El campo {0} supera los 50 caracteres")]
         public string Name { get; set; }
 
-        [Required]
-        [StringLength(maximumLength: 500)]
+        [Required(ErrorMessage = "El campo {0} es requerido")]
+        [StringLength(maximumLength: 500, ErrorMessage ="El campo {0} supera los 500 caracteres")]
         public string Description { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "El campo {0} es requerido")]
+
+        [Range(0, 999999999.99)]
         public double Price { get; set; }
 
-        [Required]
-        [StringLength(maximumLength: 100)]
+        [Required(ErrorMessage = "El campo {0} es requerido")]
+        [StringLength(maximumLength: 100, ErrorMessage ="El campo {0} supera los 100 caracteres")]
         public string Family { get; set; }
     }
 }

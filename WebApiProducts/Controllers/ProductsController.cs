@@ -24,6 +24,7 @@ namespace WebApiProducts.Controllers
 
         //Get Products api/Products
         [HttpGet]
+      
         public async Task<ActionResult<IEnumerable<Product>>> GetProducts()
         {
             return await _context.Products.ToListAsync();
@@ -33,6 +34,11 @@ namespace WebApiProducts.Controllers
         [HttpPost]
         public async Task<ActionResult<Product>> PostProduct(Product product)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
             _context.Products.Add(product);
             await _context.SaveChangesAsync();
 
