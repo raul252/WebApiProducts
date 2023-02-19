@@ -6,7 +6,7 @@ ASP .NET CORE 5 API
 
 1. In appsettings.json there is ConnectionStrings defaultConnection
 
-# "defaultConnection": "Server=(localDB)\\MSSQLLocalDb;Initial Catalog=Products;Integrated Security=True"
+### "defaultConnection": "Server=(localDB)\\MSSQLLocalDb;Initial Catalog=Products;Integrated Security=True"
 
 2. In Nutget Package Console execute Update-Database command
 
